@@ -283,19 +283,19 @@ module.exports = function (grunt) {
             ]
         },
         jade: {
-        dist: {
-            options: {
-                pretty: false
-            },
-            files: [{
-                expand: true,
-                cwd: '<%= yeoman.app %>',
-                dest: '.tmp',
-                src: '{,*/}*.jade',
-                ext: '.html'
-            }]
+            dist: {
+                options: {
+                    pretty: false
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '.tmp',
+                    src: '{,*/}*.jade',
+                    ext: '.html'
+                }]
+            }
         }
-    }
     });
 
     grunt.renameTask('regarde', 'watch');

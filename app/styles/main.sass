@@ -1,0 +1,39 @@
+$dark: #3b3b3b
+$light: #fafafa
+$blue: #6cc
+$purple: #c9c
+$orange: #f99157
+
+body
+    background-color: $light
+    color: $dark
+
+#header-main
+    background-color: $dark
+    color: $light
+    padding: 1em 2em 1em
+    .blank
+        border-color: $light
+    & > *
+        display: inline-block
+    h1
+        margin-right: 1.5em
+
+.blank
+    display: inline-block
+    width: 7em
+    border-bottom: 1px solid $dark
+    margin-left: 0.5em
+    text-align: center
+
+.for-editors
+    .blank
+        color: $blue
+
+.for-organizers
+    .blank
+        color: $purple
+
+.for-makers
+    .blank
+        color: $orange
