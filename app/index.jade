@@ -15,40 +15,83 @@ html
     script(src='components/modernizr/modernizr.js')
     //
        endbuild
-  body.for-editors
-    #header-main
-      h1 Publishist
-      #tagline
-        | The easiest way to manage your entire publication lifecycle,
-        br
-        | from
-        span.blank#tagline-noun-1 submission
-        |, to
-        span.blank#tagline-noun-2 review
-        |, to
-        span.blank#tagline-noun-3 publication
+  body
+    #header-main.clearfix
+      .inner
+        h1
+          a(href='#') Publishist
+        #tagline
+          | The easiest way to manage your entire publication lifecycle,
+          br
+          | from
+          span.blank#tagline-noun-1
+          |, to
+          span.blank#tagline-noun-2
+          |, to
+          span.blank#tagline-noun-3
+          |.
+        #try-it
+          a.btn.btn-large(href='#') Try it free
 
-    #select-one
-      h2
-        | What it does for
-        span.blank#who editors
+    #choose-one
+      .inner
+        h2
+          | What it does for
+          span.blank#who
+            span.placeholder (choose one)
+        #choices.clearfix
+          a.choice#choice-editors(href="#for-editors")
+            .inner editors
+          a.choice#choice-organizers(href="#for-organizers")
+            .inner organizers
+          a.choice#choice-makers(href="#for-makers")
+            .inner artists/poets/makers
+    #features
+      .inner
+        #cube
+          .face.bottom
+            // intentionally left blank
+          .face.left#editors-features
+            .inner
+              :markdown
+                ## Empowers editors
+                <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+          .face.front#organizers-features
+            .inner
+              :markdown
+                ## Organizes organizers
+                <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+          .face.right#makers-features
+            .inner
+              :markdown
+                ## Makes makers happy
+                <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+                * <span class="gray">Have complete control over how your submissions will look, feel, and/or sound, once published on the web</span>
+                * Check on the status of your submitted works, such as if they've been reviewed yet
+                * Easily submit under a pseudonym, if desired
+                * <span class="gray">If the editor enables it, </span>see how your submissions are scored even before they're published
+                * Accumulate an impressive public profile as you're published in various issues and publications that use the Publishist platform
+                * Maintain a complete history of your submitted works on your private profile, and easily revise and resubmit unaccepted works to the same or other publications
+                * <span class="gray">Monetize your creations by adding Flattr, PayPal, Dwolla, Bitcoin, and other donation options to the footer of your works, or just your profile page</span>
+                * <span class="gray">Upload audio versions of your written works, if you'd like, or allow your fans to contribute audio versions!</span>
+                * <span class="gray">Have complete control of the licensing of each of your works, whether strict copyright or joyful copyleft</span>
+                * <span class="gray">Publicize upcoming performances to fans so they can come support you in person</span>
 
     //
        Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script
+    script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     //
-       build:js scripts/main.js
+       build:js scripts/main.coffee
     script(src='components/jquery/jquery.js')
+    script(src='components/jquery-hashchange/jquery.ba-hashchange.js')
     script(src='scripts/main.js')
-    //
-       endbuild
-    //
-       build:js(.tmp) scripts/coffee.js
-    script(src='scripts/hello.js')
     //
        endbuild
 

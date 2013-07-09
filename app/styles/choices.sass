@@ -1,0 +1,38 @@
+#choices
+    font-size: 1.5em
+    padding: 1em 0 2em
+    width: 80%
+    margin: 0 auto
+@media only screen and (max-width:1180px)
+    #choices
+        width: 90%
+@media only screen and (max-width:1056px)
+    #choices
+        width: 100%
+@media only screen and (max-width:956px)
+    #choices
+        font-size: 1.2em
+.choice
+    float: left
+    background-color: $dark
+    color: $light
+    text-align: center
+    word-wrap: break-word
+    width: 30%
+    margin-right: 5%
+    &, .inner
+        border-radius: 0.2em
+    &:last-child
+        margin-right: 0
+    .inner
+        padding: 1.5em 0
+
+#choice-editors
+    &:hover, &:focus
+        box-shadow: 0 0 15px darken($blue, 20%)
+#choice-organizers
+    &:hover, &:focus
+        box-shadow: 0 0 15px darken($purple, 20%)
+#choice-makers
+    &:hover, &:focus
+        box-shadow: 0 0 15px darken($orange, 20%)

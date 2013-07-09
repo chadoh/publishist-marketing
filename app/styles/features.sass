@@ -1,0 +1,47 @@
+@import compass/css3/transform
+@import compass/css3/transition
+$width: 1200px
+$height: 450px
+#features
+    background-color: transparent
+    color: $light
+    .inner
+        padding: 0 2em
+    > .inner
+        width: $width
+        height: $height
+        position: relative
+        +perspective($width/2)
+
+#cube
+    +transform-style(preserve-3d)
+    width: 100%
+    height: 100%
+    +transition(transform 1s)
+    .face
+        width: $width
+        height: $height
+        display: block
+        background-color: $dark
+        position: absolute
+        font-size: 1.2em
+        +zigzag-top
+    .front
+        -webkit-transform: rotateY(  0deg) translateZ($width / 2)
+    .right
+        -webkit-transform: rotateY( 90deg) translateZ($width / 2)
+    .left
+        -webkit-transform: rotateY(-90deg) translateZ($width / 2)
+    .bottom
+        -webkit-transform: rotateX( 90deg) translateZ(-$height/2)
+        height: $width
+        background-color: $light
+
+#cube // show top
+    -webkit-transform: translateZ(- $width/2) rotateX( 90deg) translateZ(-$width/3)
+.for-editors #cube // show left
+    -webkit-transform: translateZ(- $width/2) rotateY( 90deg)
+.for-organizers #cube // show front
+    -webkit-transform: translateZ(- $width/2) rotateY(  0deg)
+.for-makers #cube // show right
+    -webkit-transform: translateZ(- $width/2) rotateY(-90deg)

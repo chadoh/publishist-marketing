@@ -1,0 +1,27 @@
+$dark: #3b3b3b
+$light: #fafafa
+$gray: #999
+$blue: #6cc
+$purple: #c9c
+$orange: #f99157
+
+=zigzag($size)
+    content: " "
+    display: block
+    position: relative
+    width: 100%
+    height:  $size
+    background-repeat: repeat-x
+    background-size: $size*2 $size, $size*2 $size
+=zigzag-top($size: 13px, $color: $dark)
+    &:before
+        background: linear-gradient(to bottom left, transparent 75%, $color 75%) 0 50%, linear-gradient(to bottom right, transparent 75%, $color 75%) 0 100%
+        +zigzag($size)
+        top: -$size
+=zigzag-bottom($size: 13px, $color: $dark)
+    &:after
+        background: linear-gradient(to top left, transparent 75%, $color 75%) 0 50%, linear-gradient(to top right, transparent 75%, $color 75%) 0 50%
+        +zigzag($size)
+        bottom: -$size
+
+@import inspired_by_twitter_bootstrap
