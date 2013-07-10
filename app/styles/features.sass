@@ -1,17 +1,13 @@
 @import compass/css3/transform
 @import compass/css3/transition
-$width: 1200px
-$height: 450px
+$width: 100%
+$height: 500px
 #features
     background-color: transparent
     color: $light
-    .inner
-        padding: 0 2em
-    > .inner
-        width: $width
-        height: $height
-        position: relative
-        +perspective($width/2)
+    height: $height
+    position: relative
+    +perspective($height)
 
 #cube
     +transform-style(preserve-3d)
@@ -20,28 +16,26 @@ $height: 450px
     +transition(transform 1s)
     .face
         width: $width
-        height: $height
+        height: 100%
         display: block
         background-color: $dark
         position: absolute
         font-size: 1.2em
         +zigzag-top
     .front
-        -webkit-transform: rotateY(  0deg) translateZ($width / 2)
-    .right
-        -webkit-transform: rotateY( 90deg) translateZ($width / 2)
-    .left
-        -webkit-transform: rotateY(-90deg) translateZ($width / 2)
+        -webkit-transform: rotateX(  0deg) translateZ($height/2)
     .bottom
-        -webkit-transform: rotateX( 90deg) translateZ(-$height/2)
-        height: $width
-        background-color: $light
+        -webkit-transform: rotateX( 90deg) translateZ($height/2)
+    .back
+        -webkit-transform: rotateX(180deg) translateZ($height/2)
+    .top
+        -webkit-transform: rotateX(270deg) translateZ($height/2)
 
-#cube // show top
-    -webkit-transform: translateZ(- $width/2) rotateX( 90deg) translateZ(-$width/3)
-.for-editors #cube // show left
-    -webkit-transform: translateZ(- $width/2) rotateY( 90deg)
-.for-organizers #cube // show front
-    -webkit-transform: translateZ(- $width/2) rotateY(  0deg)
-.for-makers #cube // show right
-    -webkit-transform: translateZ(- $width/2) rotateY(-90deg)
+#cube // show front
+    -webkit-transform: translateZ(-$height/2)
+.for-editors #cube // show bottom
+    -webkit-transform: translateZ(-$height/2) rotateX( 90deg)
+.for-organizers #cube // show back
+    -webkit-transform: translateZ(-$height/2) rotateX(180deg)
+.for-makers #cube // show top
+    -webkit-transform: translateZ(-$height/2) rotateX(270deg)
