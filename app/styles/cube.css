@@ -1,0 +1,24 @@
+#cube { /* show front */
+    -webkit-transform: translateZ(-250px);
+    -moz-transform:    translateZ(-250px);
+    -o-transform:      translateZ(-250px);
+    transform:         translateZ(-250px);
+}
+.for-editors #cube { /* show bottom */
+    -webkit-transform: translateZ(-250px) rotateX( 90deg);
+    -moz-transform:    translateZ(-250px) rotateX( 90deg);
+    -o-transform:      translateZ(-250px) rotateX( 90deg);
+    transform:         translateZ(-250px) rotateX( 90deg);
+}
+.for-organizers #cube { /* show back */
+    -webkit-transform: translateZ(-250px) rotateX(180deg);
+    -moz-transform:    translateZ(-250px) rotateX(180deg);
+    -o-transform:      translateZ(-250px) rotateX(180deg);
+    transform:         translateZ(-250px) rotateX(180deg);
+}
+.for-makers #cube { /* show top */
+    -webkit-transform: translateZ(-250px) rotateX(270deg);
+    -moz-transform:    translateZ(-250px) rotateX(270deg);
+    -o-transform:      translateZ(-250px) rotateX(270deg);
+    transform:         translateZ(-250px) rotateX(270deg);
+}
