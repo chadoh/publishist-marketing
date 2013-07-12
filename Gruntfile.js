@@ -285,7 +285,7 @@ module.exports = function (grunt) {
         jade: {
             dist: {
                 options: {
-                    pretty: false
+                    pretty: true
                 },
                 files: [{
                     expand: true,
@@ -325,10 +325,16 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'coffee',
+        'compass:dist',
         'jade',
         'useminPrepare',
         'concurrent:dist',
+        'imagemin',
+        'htmlmin',
+        'concat',
         'cssmin',
+        'uglify',
         'copy',
         'rev',
         'usemin'
