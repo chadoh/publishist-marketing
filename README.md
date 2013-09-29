@@ -13,8 +13,16 @@ node) templates and Coffeescript.
 
   [Yeoman]: http://yeoman.io/
 
-To run the dev environment, run `grunt server` from the project directory. To
-bundle it all up for production, run `grunt build`.
+To run the dev environment, run `grunt server` from the project directory.
 
+Deploying
+---------
 
+To minify everything for production, run `grunt`. This will minify & concat
+files and put them all in the dist directory. You can make sure it looks good
+by opening dist/index.html.
 
+If that looks good, you can push the dist directory to the gh-pages branch on
+github with the following command:
+
+    git subtree push --prefix dist origin gh-pages
