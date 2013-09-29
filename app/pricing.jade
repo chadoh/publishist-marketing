@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title Publishist
+    title Pricing • Publishist
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
     // Place favicon.ico and apple-touch-icon.png in the root directory
@@ -19,18 +19,28 @@ html
     script(src='components/modernizr/modernizr.js')
     // endbuild
 
-  body.muffin
-    nav.main
-      a(href="/pricing.html") Pricing
-    .sales-pitch
-      h1 Publishist
-      h2 Hey, lit mags &amp; writing circles, come meet the Internet.
-      div
-        | Currently by invite only. Find out when there's news:
-        form(action="http://publishist.us7.list-manage.com/subscribe/post?u=82eccb779d56c1434d98c79cf&amp;id=64431e8135", method="post", name="mc-embedded-subscribe-form", target="_blank", novalidate)
-          input(type="email", value="", name="EMAIL", class="email", id="mce-EMAIL", placeholder="email address", required)
-          input(type="submit", value="Subscribe", name="subscribe")
-      <!--End mc_embed_signup-->
+  body.bricks
+    .logo
+      a(href="/") Publishist
+    h1 One Simple Price
+    .pricing-chart
+      .pricing
+        span.currency $
+        span.price 150
+        small per issue
+      ul
+        li
+          strong unlimited&nbsp;
+          | staff
+        li
+          strong unlimited&nbsp;
+          | submissions per month
+        li Restrict who sees authors' names
+        li Restrict who sees submissions' scores
+        li Control visibility options on an issue-by-issue basis
+        li Manage real-life meetings of staff
+        li Easily publish winners to the web
+        li Control page order of published issues
 
     //
        Google Analytics: change UA-XXXXX-X to be your site's ID.

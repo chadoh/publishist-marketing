@@ -1,4 +1,5 @@
 @import base
+@import url(http://fonts.googleapis.com/css?family=Quattrocento:400,700)
 
 a
     text-decoration: none
@@ -7,48 +8,77 @@ a
 .hidden
     display: none
 
+h1, h2, h3, h4, h5, h6, .pricing, nav.main, .logo
+    font-family: Quattrocento, serif
+
+body.muffin
+    background-image: url(/images/muffin.jpg)
+body.bricks
+    background-image: url(/images/bricks.jpg)
+    h1
+        text-align: center
 body
     background-color: $light
     color: $dark
-
-#header-main
-    background-color: $dark
+    background-position: 60% bottom
+    background-size: 1490px auto
+    background-repeat: no-repeat
+    background-attachment: fixed
     color: $light
-    +zigzag-bottom
-    .inner
-        & > *
-            display: inline-block
-        h1
-            margin-right: 1.5em
-.inner
-    padding: 1em 2em 0
+    text-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.8), 2px 2px 5px rgba(0,0,0,0.5)
+@media only screen and (max-width: 480px)
+    body
+        background-size: 1000px auto
+        background-position: 60% top
 
-#try-it
-    float: right
-    margin-top: 1em
+body:before, body:after
+    display: table
+    content: ""
+    line-height: 0
 
-.blank
-    display: inline-block
-    margin-left: 0.2em
+nav.main, .logo
+    padding: 1em
+
+.sales-pitch
+    position: absolute
+    top: 25%
+    width: 100%
+    margin-left: -1em
     text-align: center
-    min-width: 6em
-    border-bottom: 1px solid $light
+    line-height: 3em
+    form, input
+        display: inline
 
-#choose-one
-    +zigzag-bottom($color: $light)
-    .blank
-        min-width: 11em
-        border-bottom: 1px solid $dark
+.pricing-chart
+    margin: 0 auto
+    width: 300px
+    background-color: white
+    background-color: rgba(255,255,255,0.9)
+    border-radius: 1em
+    box-shadow: 0 0 15px rgba(0,0,0,0.4)
+    text-align: center
+    color: $dark
+    text-shadow: none
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+    li
+        display: block
+        padding: 1em 0
+        border-bottom: 1px dotted $gray
+        margin: 0 1em
+        &:last-child
+            border-bottom: none
 
-.placeholder, .gray
-    color: $gray
 
-.for-editors, .for-organizers, .for-makers
-    .placeholder
-        display: none
-
-@import choices
-@import features
-@import vision
-@import content-changes
-@import color-changes
+.pricing
+    background-color: rgba(255,255,255,0.9)
+    padding: 0.5em 0
+    border-radius: 1em 1em 0 0
+    .currency
+        vertical-align: top
+    .price
+        font-size: 3em
+    small
+        display: block

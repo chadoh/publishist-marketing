@@ -1,0 +1,127 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+
+    // build:css(app) styles/normalize.css
+    link(rel='stylesheet', href='components/normalize-css/normalize.css')
+    // endbuild
+    // build:css styles/verbose.css
+    link(rel='stylesheet', href='styles/verbose.css')
+    // endbuild
+
+    // build:js(app) scripts/modernizr.js
+    script(src='components/modernizr/modernizr.js')
+    // endbuild
+
+  body
+    #header-main.clearfix
+      .inner
+        h1
+          a(href='#') Publishist
+        #tagline
+          | The easiest way to manage your entire publication lifecycle,
+          br
+          | from
+          span.blank#tagline-noun-1
+          |, to
+          span.blank#tagline-noun-2
+          |, to
+          span.blank#tagline-noun-3
+          |.
+        #try-it
+          a.btn.btn-large(href='#') Try it free
+
+    #choose-one
+      .inner
+        h2
+          | What it does for
+          span.blank#who
+            span.placeholder (choose one)
+        #choices.clearfix
+          a.choice#choice-editors(href="#for-editors")
+            .inner editors
+          a.choice#choice-organizers(href="#for-organizers")
+            .inner organizers
+          a.choice#choice-makers(href="#for-makers")
+            .inner artists/poets/makers
+    #features
+      include styles/cube.css
+      #cube
+        .face.front
+          // intentionally left blank
+        .face.top#editors-features
+          .inner
+            :markdown
+              ## Empowers editors
+
+              * Allow <span class="gray">whomever you'd like</span> to submit to your publication, including everyone<!-- (picture of submission form, with photo and text entered)-->
+              * Schedule staff meetings, where all your staff can review and score submissions <!--(picture of meeting page with "email reminder" link clearly visible)-->
+              * Review highest-scored submissions and publish the best with one click
+              * Design a unique <span class="gray">aesthetic and</span> flow for each publication you publish
+              * <span class="gray">Manage both submissions intended for print and purely digital media</span>
+
+              <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+        .face.back#organizers-features
+          .inner
+            :markdown
+              ## Organizes organizers
+
+              * <span class="gray">Choose from customizable, beautiful, and responsive templates for your blog</span>
+              * <span class="gray">Schedule blog posts (either from published/upcoming content, or custom posts)</span>
+              * <span class="gray">Organize a store and customize what person or group gets shipment requests</span>
+              * <span class="gray">Track your publication's health with beautiful charts: meeting attendance, awarded scores for current and historic publications, number of submissions issue-over-issue, and more</span>
+
+              <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+        .face.bottom#makers-features
+          .inner
+            :markdown
+              ## Makes makers happy
+
+              * <span class="gray">Have complete control over how your submissions will look, feel, and/or sound, once published on the web</span>
+              * Check on the status of your submitted works, such as if they've been reviewed yet
+              * Easily submit under a pseudonym, if desired
+              * <span class="gray">If the editor enables it, </span>see how your submissions are scored even before they're published
+              * Accumulate an impressive public profile as you're published in various issues and publications that use the Publishist platform
+              * Maintain a complete history of your submitted works on your private profile, and easily revise and resubmit unaccepted works to the same or other publications
+              * <span class="gray">Monetize your creations by adding Flattr, PayPal, Dwolla, Bitcoin, and other donation options to the footer of your works, or just your profile page</span>
+              * <span class="gray">Upload audio versions of your written works, if you'd like, or allow your fans to contribute audio versions!</span>
+              * <span class="gray">Have complete control of the licensing of each of your works, whether strict copyright or joyful copyleft</span>
+              * <span class="gray">Publicize upcoming performances to fans so they can come support you in person</span>
+
+              <small>(<span class="gray">Gray stuff</span> is coming soon)</small>
+
+    #vision
+      .inner
+        p.gray.
+          Publishist aims to promote open communities of people who joyfully
+          create more than they consume. We hope to be a mechanism by which
+          creators are lovingly critiqued and championed by their community
+          (because no one grows in a vacuum), and by which the best works are
+          given appropriate promotion above all the noise. We believe in the
+          ability of localized communities to produce artists who produce
+          creations on par with the best creations of history.
+
+    //
+       Google Analytics: change UA-XXXXX-X to be your site's ID.
+    // script.
+    //   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    //   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    //   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    //   s.parentNode.insertBefore(g,s)}(document,'script'));
+
+    // build:js(app) scripts/jquery-n-friends.js
+    script(src='components/jquery/jquery.js')
+    script(src='components/jquery-hashchange/jquery.ba-hashchange.js')
+    // endbuild
+    // build:js scripts/main.js
+    script(src='scripts/main.js')
+    // endbuild
+
