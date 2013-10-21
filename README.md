@@ -11,9 +11,22 @@ This repo was built with [Yeoman]. It's just a basic web app, very little
 javascript, but it's nice to be able to write Jade (similar to Haml, but for
 node) templates and Coffeescript.
 
+To install Yeoman, you'll need [nodejs] and [npm, the Node.js Package
+Manager][npm]. You can install these with [homebrew] on OSX with `brew install
+node`. (I think that includes npm, too. If the next command doesn't work, you
+may need to `brew install npm`, too. Please update these docs when you verify.)
+Once you've got that, go ahead and install Yeoman:
+
+    npm install -g yo
+
   [Yeoman]: http://yeoman.io/
+  [nodejs]: http://nodejs.org/
+  [npm]: https://npmjs.org/
+  [homebrew]: http://brew.sh/
 
 To run the dev environment, run `grunt server` from the project directory.
+Then, as you save changes to the files, your browser will be automatically
+updated with your changes.
 
 Deploying
 ---------
