@@ -1,0 +1,1 @@
+function getURLParameter(a){return decodeURI((RegExp(a+"="+"(.+?)(&|$)").exec(location.search)||[,null])[1])}if(subdomain=getURLParameter("subdomain"),"null"!=subdomain)for(examples=document.getElementsByClassName("subdomain"),i=0;i<examples.length;i++)examples[i].innerHTML=subdomain;

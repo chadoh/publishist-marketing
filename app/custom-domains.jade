@@ -3,10 +3,9 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title Pricing • Publishist
+    title How to Add a Custom Domain
     meta(name='description', content='What do you get when you empower literary groups to focus on creating instead of administrating? Beautiful, quality content from people right near you.')
     meta(name='viewport', content='width=device-width')
-    // Place favicon.ico and apple-touch-icon.png in the root directory
 
     // build:css(app) styles/normalize.css
     link(rel='stylesheet', href='components/normalize-css/normalize.css')
@@ -19,28 +18,26 @@ html
     script(src='components/modernizr/modernizr.js')
     // endbuild
 
-  body.bricks.marketing
-    .logo
-      a(href="index.html") Publishist
-    h1 One Simple Price
-    .pricing-chart
-      .pricing
-        span.currency $
-        span.price 150
-        small per issue
-      ul
-        li
-          strong unlimited&nbsp;
-          | staff
-        li
-          strong unlimited&nbsp;
-          | submissions per month
-        li Restrict who sees authors' names
-        li Restrict who sees submissions' scores
-        li Control visibility options on an issue-by-issue basis
-        li Manage real-life meetings of staff
-        li Easily publish winners to the web
-        li Control page order of published issues
+  body
+    nav.main
+      .inner
+        a(href="index.html") Publishist
+        h1 Setting Up A Custom Domain
+
+    article
+
+      h2 Part I: No One Enjoys Setting Up DNS
+
+      p
+        | When you first get started with Publishist, your publication's new website will have a domain like "
+        span.subdomain example
+        |.publishist.com". If you own your own domain (for example, let's say you own "www.
+        span.subdomain example
+        |mag.com") and you want to point it at your Publishist website, you'll need to configure DNS.
+
+      p
+        | To set up DNS, it helps to know a little bit about how it works. If
+        | you already know a good bit, feel free to skip to the next section.
 
     //
        Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -50,4 +47,6 @@ html
     //   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     //   s.parentNode.insertBefore(g,s)}(document,'script'));
 
-
+    //build:js scripts/main.js
+    script(src='scripts/main.js')
+    //endbuild
