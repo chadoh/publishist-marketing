@@ -37,7 +37,7 @@ body:before, body:after
     content: ""
     line-height: 0
 
-nav.main, .logo, body > article
+nav.main, .logo
     padding: 1em
 
 .marketing nav.main
@@ -103,17 +103,23 @@ nav.main
     a
         color: $light
 
+body > article, nav.main .inner
+    max-width: 800px
+    padding: 0.2em 10%
+
 body > article
-    max-width: 960px
     margin: 0 auto
-    font-size: 2.5vw
+    font-size: 2vw
     line-height: 3.5vw
     h1
         font-size: 5.7vw
     h2
-        font-size: 4.0vw
+        font-size: 3.5vw
+        line-height: 5vw
+        margin-top: 1.5em
     h3
         font-size: 2.8vw
+        margin-top: 1.5em
 
 @media only screen and (max-width: 600px)
     body > article
