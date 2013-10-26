@@ -7,21 +7,105 @@
     <meta name="description" content="What do you get when you empower literary groups to focus on creating instead of administrating? Beautiful, quality content from people right near you.">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/e8908cf9.normalize.css">
-    <link rel="stylesheet" href="styles/87e7de5b.main.css">
+    <link rel="stylesheet" href="styles/7f72a292.main.css">
     <script src="scripts/f7f27360.modernizr.js"></script>
   </head>
-  <body>
+  <body class="newspaper">
     <nav class="main">
       <div class="inner"><a href="index.html">Publishist</a>
         <h1>Setting Up A Custom Domain</h1>
       </div>
     </nav>
     <article>
-      <h2>Part I: No One Enjoys Setting Up DNS</h2>
-      <p>When you first get started with Publishist, your publication's new website will have a domain like "<span class="subdomain">example</span>.publishist.com". If you own your own domain (for example, let's say you own "www.<span class="subdomain">example</span>mag.com") and you want to point it at your Publishist website, you'll need to configure DNS.</p>
+      <h2>No One Enjoys Setting Up DNS</h2>
+      <p>When you first get started with Publishist, you'll have a brand new website at a domain like "<span class="subdomain">example</span>.publishist.com". If you own your own domain (for example, let's say you own "www.<span class="subdomain">example</span>mag.com") and you want to point it at your Publishist website, you'll need to configure DNS.</p>
       <p>
         To set up DNS, it helps to know a little bit about how it works. If
-        you already know a good bit, feel free to skip to the next section.
+        you already know a good bit, feel free to skip to&nbsp;<a href="#the-setup">the next section.</a>
+      </p>
+      <h3 id="dns-primer">A Wee Primer On DNS</h3>
+      <p>
+        Websites live on servers. A server is just a computer that has
+        constant access to the internet, and is specially-configured to hand
+        out web pages (that is, to "serve" web pages).
+      </p>
+      <p>
+        A website address like "publishist.com" is called a "domain name".
+        Domain names are great for humans, but computers don't know how to use
+        them. In order for your computer to talk to a server (some computer on
+        the other side of the internet), it needs to know that server's IP
+        address.
+      </p>
+      <p>Think of an IP address as a computer's phone number. When you type in "<span class="subdomain">example</span>.publishist.com", your computer needs to figure out the phone number
+        of that server. Then your computer asks that server for a web page, and
+        the server creates the page and sends it back to you across the internet.
+      </p>
+      <p>The way your computer figures out the phone number (IP address) of the server you want is the&nbsp;<b>D</b>omain&nbsp;<b>N</b>ame&nbsp;<b>S</b>ystem. There are a whole bunch of computers that just store phonebooks for the internet, mapping domain names like www.<span class="subdomain">example</span>mag.com to IP addresses. These are called Domain Name Servers. When
+        you enter a URL in your browser or click a link on a website, your
+        computer asks these DNS servers to look up the IP address of the
+        desired server, and then goes and fetches your web page from that
+        server.
+      </p>
+      <h2 id="the-setup">Configuring Your Custom Domain On Publishist</h2>
+      <p>There are a few steps to get your Publishist website responding to your very own domain.</p>
+      <h3 id="step-1">1. Register A Domain Name</h3>
+      <p>You'll need to own a domain name in order to use it with Publishist. Publishist does not provide this service, but we recommend these registrars:</p>
+      <ul>
+        <li><a href="https://www.hover.com/">Hover</a></li>
+        <li><a href="https://www.name.com/">Name.com</a></li>
+        <li><a href="http://www.gandi.net/">Gandi</a></li>
+        <li><a href="http://www.namecheap.com/">Namecheap</a></li>
+      </ul>
+      <p>Please do NOT use GoDaddy. GoDaddy are a smarmy company that have poor customer service and want to censor the internet. If you've already registered a domain with them, consider switching.</p>
+      <h3 id="step-2">2. Make Sure Your DNS Provider Is Fancy Enough</h3>
+      <p>
+        Your registrar from the previous step will probably let you configure
+        your DNS settings. However, you don't need to use their DNS tools. It's
+        likely that their DNS tools are pretty limited.
+      </p>
+      <p>Any DNS service will let you complete&nbsp;<a href="#step-3">step 3</a>, however, to complete&nbsp;<a href="#step-4">step 4</a>&nbsp;you'll need one with some advanced capabilities. You're welcome
+        to not complete step 4, if you'd rather not bother and don't need the
+        functionality.
+      </p>
+      <p>
+        The specific functionality you need is the ability to add a type of
+        record sometimes called "HTTPRED", "ALIAS", or "Redirect". Here are some
+        DNS services that allow this and what they call the record type:
+      </p>
+      <ul>
+        <li><a href="https://dnsimple.com/">DNSimple</a>&nbsp;provides an ALIAS record</li>
+        <li><a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a>&nbsp;provides an HTTPRED record</li>
+        <li><a href="https://www.zerigo.com/managed-dns">Zerigo DNS</a>&nbsp;provides a Redirect record</li>
+      </ul>
+      <p>
+        We recommend signing up with one of these services. Once you're signed
+        up, you'll need to tell your registrar (from&nbsp;<a href="#step-1">step 1</a>) to use these new, alternate domain name servers, instead of their
+        own. Your new DNS service will provide instructions on how to do this.
+      </p>
+      <h3 id="step-3">3. Map www.<span class="subdomain">example</span>mag.com to&nbsp;<span class="subdomain">example</span>.publishist.com</h3>
+      <p>OK! Now onto the easy part! Log in to your DNS provider and add new DNS record. You want to add a CNAME record pointing "www.<span class="subdomain">example</span>mag.com" (or whatever your domain is) to&nbsp;<b><span class="subdomain">example</span>.publishist.com</b>&nbsp;(or whatever URL you use to get to your Publishist site).</p>
+      <p>
+        That's it! Once you've done this, it may take some time for your
+        changes to make it onto all the other domain name servers across the
+        internet. Sometimes it can take a couple days. But once your changes
+        have propogated, you can visit your custom domain to get to your
+        Publishist website!
+      </p>
+      <h3 id="step-4">4. Redirect&nbsp;<span class="subdomain">example</span>mag.com to www.<span class="subdomain">example</span>mag.com</h3>
+      <p>
+        People often don't type the "www." part of URLs. If you want people
+        to be able to type in your web address without the "www", you'll need
+        a fancy DNS service as described in&nbsp;<a href="#step-2">step 2</a>. Otherwise, if they forget to type the "www", they'll get an error
+        or a totally different page.
+      </p>
+      <p>
+        If you have a DNS service that allows it, add an Alias, HTTPRED, or
+        Redirect record pointing from&nbsp;<b><span class="subdomain">example</span>mag.com</b>&nbsp;(or whatever your custom domain is) to&nbsp;<b>www.<span class="subdomain">example</span>mag.com</b>&nbsp;(your same custom domain, but with "www").
+      </p>
+      <p>
+        Once this change propogates across the internet, you should be able
+        to type in just your root domain and get redirected to your "www"
+        domain, which points to your Publishist site! Huzzah! All done.
       </p>
     </article><!--
     <Google>Analytics: change UA-XXXXX-X to be your site's ID.</Google>-->
